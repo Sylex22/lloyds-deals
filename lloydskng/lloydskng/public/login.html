@@ -1,0 +1,5 @@
+<!doctype html><html><head><title>Admin Login</title><link rel="stylesheet" href="/style.css"></head><body><div class="wrap">
+<div class="card" style="max-width:420px;margin:70px auto"><h1>Admin Login</h1><input id="u" class="input" placeholder="Username"><input id="p" class="input" type="password" placeholder="Password"><button class="btn" onclick="login()">Login</button><p id="msg"></p></div>
+</div><script>
+async function login(){const body=new URLSearchParams({username:u.value,password:p.value});const r=await fetch('/api/login',{method:'POST',body});if(r.ok)location.href='/admin';else msg.textContent='Wrong login';}
+</script></body></html>
